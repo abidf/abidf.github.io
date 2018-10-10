@@ -67,7 +67,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<app-navbarp></app-navbarp>\n<br>\n<br>\n<br>\n\n<app-itemadd></app-itemadd>\n\n\n\n\n\n<!--<router-outlet></router-outlet>-->\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<app-navbarp></app-navbarp>\n<app-shell></app-shell>\n\n\n\n\n\n<!--<router-outlet></router-outlet>-->\n"
 
 /***/ }),
 
@@ -140,12 +140,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _components_itemadd_itemadd_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/itemadd/itemadd.component */ "./src/app/components/itemadd/itemadd.component.ts");
 /* harmony import */ var _components_navbarp_navbarp_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/navbarp/navbarp.component */ "./src/app/components/navbarp/navbarp.component.ts");
+/* harmony import */ var _components_shell_shell_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/shell/shell.component */ "./src/app/components/shell/shell.component.ts");
+/* harmony import */ var _components_settings_settings_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/settings/settings.component */ "./src/app/components/settings/settings.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -164,7 +168,9 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
                 _components_itemadd_itemadd_component__WEBPACK_IMPORTED_MODULE_8__["ItemaddComponent"],
-                _components_navbarp_navbarp_component__WEBPACK_IMPORTED_MODULE_9__["NavbarpComponent"]
+                _components_navbarp_navbarp_component__WEBPACK_IMPORTED_MODULE_9__["NavbarpComponent"],
+                _components_shell_shell_component__WEBPACK_IMPORTED_MODULE_10__["ShellComponent"],
+                _components_settings_settings_component__WEBPACK_IMPORTED_MODULE_11__["SettingsComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -191,7 +197,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<form (ngSubmit)=\"onSubmit()\">\n    <div class=\"form-group\" style=\"background-color: #eee;\">\n      <br>\n          <div class=\"row\">\n            <div class=\"col-sm-1\"></div>\n            <div class=\"col-md-4\">\n              <label for=\"title\">Item ID</label>\n              <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.itemid\" name=\"title\" aria-label=\"Title\">\n            </div>\n            <div class=\"col-md-4\">\n              <label for=\"barcode\">Barcode</label>\n              <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.barcode\" name=\"barcode\" >\n            </div>\n            <!--<div class=\"col-md-2\">\n                <ngx-barcode #barcode bc-element-type=\"svg\" bc-height=\"40\" bc-width=\"1\" [bc-value]=\"item.barcode\" class=\"rotate\">\n                </ngx-barcode>\n              </div> --> \n          </div>\n          <br>\n          <!--Row 2-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n            <div class=\"col-md-4\">\n              <label for=\"name\">Item Name</label>\n              <input type=\"text\" class=\"form-control\" placeholder=\"Name\" [(ngModel)]=\"item.name\" name=\"name\" >\n            </div>\n            <div class=\"col-md-4\">\n                <label for=\"brand\">Brand Name</label>\n                <select class=\"form-control\" placeholder=\"Brand\" [(ngModel)]=\"selectedValue\" name=\"brand\" >\n                    <option *ngFor=\"let brand of brands\" [value]=\"brand.name\">\n                      {{brand.name}}\n                    </option>\n                  </select>\n            </div>           \n          </div>\n          <br>\n          <!--Row 3-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n            <div class=\"col-md-4\">\n                <label for=\"category\">Category</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.category\" name=\"category\" >\n            </div>\n            <div class=\"col-md-4\">\n                <label for=\"unit\">Unit</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.unit\" name=\"unit\" >\n            </div>\n          </div>\n          <br>\n          <!--Row 4-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n            <div class=\"col-md-4\">\n                <label for=\"curstock\">Initial Stock</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.curstock\" name=\"curstock\" >\n            </div>\n            <div class=\"col-md-4\">\n                <label for=\"avgcost\">Item Price</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.avgcost\" name=\"avgcost\" >\n            </div>\n          </div>\n          <br>\n          <!--Row 5-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n              <div class=\"col-md-4\">\n                  <label for=\"minstklevel\">Stock Level (min.)</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.minstklevel\" name=\"minstklevel\" >\n              </div>\n              <div class=\"col-md-4\">\n                  <label for=\"discount\">Discount</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.discount\" name=\"discount\" >\n              </div>\n            </div>\n            <br>\n          <!--Row 6-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n              <div class=\"col-md-4\">\n                  <label for=\"shelfloc\">Shelf/Location</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.shelfloc\" name=\"shelfloc\" >\n              </div>\n              <div class=\"col-md-4\">\n                  <label for=\"expires\">Expires?</label>\n                  <div class=\"radio\">\n                      <label><input type=\"radio\" name=\"expires\" checked=\"\">Yes</label>\n                      &nbsp;&nbsp;\n                      <label><input type=\"radio\" name=\"expires\">No</label>\n                    </div>\n                  <!--<input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.expires\" name=\"expires\" >-->\n              </div>\n            </div>\n            <br>\n          <!--Row 7-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n              <div class=\"col-md-4\">\n                  <label for=\"invaccount\">Inventory Account</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.invaccount\" name=\"invaccount\" >\n              </div>\n              <div class=\"col-md-4\">\n                  <label for=\"incomeaccount\">Income Account</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.incomeaccount\" name=\"incomeaccount\" >\n              </div>\n            </div>\n            <br>\n            <br>\n              <!--Row 8-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n            <div class=\"col-md-3\">\n                <button type=\"submit\" class=\"btn btn-primary\" value=\"Submit\">Submit</button> &nbsp;\n                <button type=\"submit\" class=\"btn btn-secondary\" value=\"Reset\">&nbsp;Reset&nbsp; </button>\n            </div>\n            <div class=\"col-md-3\">\n            </div>\n            <div class=\"col-md-2\">\n  \n          \n          </div>\n            <!--<p> Selected value: {{selectedValue}} </p>-->\n            \n          </div>\n  \n        <br>\n      </div>\n  \n  \n    </form>\n  "
+module.exports = "\n<form (ngSubmit)=\"onSubmit()\">\n    <div class=\"form-group\" style=\"background-color: #eee;\">\n      <br>\n          <div class=\"row\">\n            <div class=\"col-sm-1\"></div>\n            <div class=\"col-md-4\">\n              <label for=\"title\">Item ID</label>\n              <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.itemid\" name=\"title\" aria-label=\"Title\">\n            </div>\n            <div class=\"col-md-4\">\n              <label for=\"barcode\">Barcode</label>\n              <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.barcode\" name=\"barcode\" >\n            </div>\n            <!--<div class=\"col-md-2\">\n                <ngx-barcode #barcode bc-element-type=\"svg\" bc-height=\"40\" bc-width=\"1\" [bc-value]=\"item.barcode\" class=\"rotate\">\n                </ngx-barcode>\n              </div> --> \n          </div>\n          <br>\n          <!--Row 2-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n            <div class=\"col-md-4\">\n              <label for=\"name\">Item Name</label>\n              <input type=\"text\" class=\"form-control\" placeholder=\"Name\" [(ngModel)]=\"item.name\" name=\"name\" >\n            </div>\n            <div class=\"col-md-4\">\n                <label for=\"brand\">Brand Name</label>\n                <select class=\"form-control\" placeholder=\"Brand\" [(ngModel)]=\"selectedValue\" name=\"brand\" >\n                    <option *ngFor=\"let brand of brands\" [value]=\"brand.name\">\n                      {{brand.name}}\n                    </option>\n                  </select>\n            </div>           \n          </div>\n          <br>\n          <!--Row 3-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n            <div class=\"col-md-4\">\n                <label for=\"category\">Category</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.category\" name=\"category\" >\n            </div>\n            <div class=\"col-md-4\">\n                <label for=\"unit\">Unit</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.unit\" name=\"unit\" >\n            </div>\n          </div>\n          <br>\n          <!--Row 4-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n            <div class=\"col-md-4\">\n                <label for=\"curstock\">Initial Stock</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.curstock\" name=\"curstock\" >\n            </div>\n            <div class=\"col-md-4\">\n                <label for=\"avgcost\">Item Price</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.avgcost\" name=\"avgcost\" >\n            </div>\n          </div>\n          <br>\n          <!--Row 5-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n              <div class=\"col-md-4\">\n                  <label for=\"minstklevel\">Stock Level (min.)</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.minstklevel\" name=\"minstklevel\" >\n              </div>\n              <div class=\"col-md-4\">\n                  <label for=\"discount\">Discount</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.discount\" name=\"discount\" >\n              </div>\n            </div>\n            <br>\n          <!--Row 6-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n              <div class=\"col-md-4\">\n                  <label for=\"shelfloc\">Shelf/Location</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.shelfloc\" name=\"shelfloc\" >\n              </div>\n              <div class=\"col-md-4\">\n                  <label for=\"expires\">Expires?</label>\n                  <div class=\"radio\">\n                      <label><input type=\"radio\" name=\"expires\" checked=\"\">Yes</label>\n                      &nbsp;&nbsp;\n                      <label><input type=\"radio\" name=\"expires\">No</label>\n                    </div>\n                  <!--<input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.expires\" name=\"expires\" >-->\n              </div>\n            </div>\n            <br>\n          <!--Row 7-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n              <div class=\"col-md-4\">\n                  <label for=\"invaccount\">Inventory Account</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.invaccount\" name=\"invaccount\" >\n              </div>\n              <div class=\"col-md-4\">\n                  <label for=\"incomeaccount\">Income Account</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.incomeaccount\" name=\"incomeaccount\" >\n              </div>\n            </div>\n            <br>\n            <br>\n              <!--Row 8-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n            <div class=\"col-md-4\">\n                <button type=\"submit\" class=\"btn btn-primary\" value=\"Submit\">Submit</button> &nbsp;\n                <button type=\"submit\" class=\"btn btn-secondary\" value=\"Reset\">&nbsp;Reset&nbsp; </button>\n            </div>\n            <div class=\"col-md-3\">\n            </div>\n            <div class=\"col-md-2\">\n  \n          \n          </div>\n            <!--<p> Selected value: {{selectedValue}} </p>-->\n            \n          </div>\n  \n        <br>\n      </div>\n  \n  \n    </form>\n  "
 
 /***/ }),
 
@@ -325,6 +331,132 @@ var NavbarpComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], NavbarpComponent);
     return NavbarpComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/settings/settings.component.html":
+/*!*************************************************************!*\
+  !*** ./src/app/components/settings/settings.component.html ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  settings works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/settings/settings.component.scss":
+/*!*************************************************************!*\
+  !*** ./src/app/components/settings/settings.component.scss ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvc2V0dGluZ3Mvc2V0dGluZ3MuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/settings/settings.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/components/settings/settings.component.ts ***!
+  \***********************************************************/
+/*! exports provided: SettingsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingsComponent", function() { return SettingsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SettingsComponent = /** @class */ (function () {
+    function SettingsComponent() {
+    }
+    SettingsComponent.prototype.ngOnInit = function () {
+    };
+    SettingsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-settings',
+            template: __webpack_require__(/*! ./settings.component.html */ "./src/app/components/settings/settings.component.html"),
+            styles: [__webpack_require__(/*! ./settings.component.scss */ "./src/app/components/settings/settings.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], SettingsComponent);
+    return SettingsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/shell/shell.component.html":
+/*!*******************************************************!*\
+  !*** ./src/app/components/shell/shell.component.html ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\n    <div class=\"row\">\n      <div class=\"col-md-7\">\n        <app-itemadd></app-itemadd>\n      </div>\n      <div class=\"col-md-5\">\n          <app-settings></app-settings>\n        \n      </div>\n    </div>\n  </div>"
+
+/***/ }),
+
+/***/ "./src/app/components/shell/shell.component.scss":
+/*!*******************************************************!*\
+  !*** ./src/app/components/shell/shell.component.scss ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvc2hlbGwvc2hlbGwuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/shell/shell.component.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/components/shell/shell.component.ts ***!
+  \*****************************************************/
+/*! exports provided: ShellComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShellComponent", function() { return ShellComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ShellComponent = /** @class */ (function () {
+    function ShellComponent() {
+    }
+    ShellComponent.prototype.ngOnInit = function () {
+    };
+    ShellComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-shell',
+            template: __webpack_require__(/*! ./shell.component.html */ "./src/app/components/shell/shell.component.html"),
+            styles: [__webpack_require__(/*! ./shell.component.scss */ "./src/app/components/shell/shell.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ShellComponent);
+    return ShellComponent;
 }());
 
 
