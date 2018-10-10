@@ -233,6 +233,12 @@ firebase/app
 
 firebase/firestore
 
+jsbarcode
+MIT
+
+ngx-barcode
+MIT
+
 rxjs-compat
 Apache-2.0
                                Apache License
