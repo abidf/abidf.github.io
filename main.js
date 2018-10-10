@@ -130,10 +130,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _components_itemadd_itemadd_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/itemadd/itemadd.component */ "./src/app/components/itemadd/itemadd.component.ts");
-/* harmony import */ var _components_navbarp_navbarp_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/navbarp/navbarp.component */ "./src/app/components/navbarp/navbarp.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angularfire2_firestore__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var angularfire2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angularfire2 */ "./node_modules/angularfire2/index.js");
+/* harmony import */ var angularfire2__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(angularfire2__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _components_itemadd_itemadd_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/itemadd/itemadd.component */ "./src/app/components/itemadd/itemadd.component.ts");
+/* harmony import */ var _components_navbarp_navbarp_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/navbarp/navbarp.component */ "./src/app/components/navbarp/navbarp.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -146,22 +152,29 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _components_itemadd_itemadd_component__WEBPACK_IMPORTED_MODULE_4__["ItemaddComponent"],
-                _components_navbarp_navbarp_component__WEBPACK_IMPORTED_MODULE_5__["NavbarpComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
+                _components_itemadd_itemadd_component__WEBPACK_IMPORTED_MODULE_8__["ItemaddComponent"],
+                _components_navbarp_navbarp_component__WEBPACK_IMPORTED_MODULE_9__["NavbarpComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"]
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
+                angularfire2__WEBPACK_IMPORTED_MODULE_4__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].firebase),
+                angularfire2_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestoreModule"],
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -178,7 +191,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"row\">\n\n    <div class=\"col-md-8\">\n      <div class=\"row\">\n\n        <div class=\"col-md-4\">\n          <label class=\"col-form-label\">Item Code:</label>\n          <input type=\"text\" class=\"form-control\" id=\"itemcode\" placeholder=\"\">\n        </div>\n\n\n      </div>\n      \n\n      <!-- Second Row -->\n      <div class=\"row\">\n\n        <div class=\"col-md-4\">\n          <label class=\"col-form-label\">Item Name:</label>\n          <input type=\"text\" class=\"form-control float-left\" id=\"itemname\" placeholder=\"\">\n        </div>\n      </div>\n\n      \n      <!-- Third Row -->\n      <div class=\"row\">\n\n        <div class=\"col-md-4\">\n          <label>Category:</label>\n          <select class=\"custom-select form-control\">\n            <option value=\"\">-Select-</option>\n            <option value=\"1\">Drink</option>\n            <option value=\"2\">Food</option>\n            <option value=\"3\">Electrical</option>\n          </select>\n        </div>\n        \n          <div class=\"col-md-4\">\n            <label>Ave. Cost:</label>\n            <input type=\"text\" class=\"form-control\" id=\"avgcost\" placeholder=\"\">\n          </div>\n\n      </div>\n      \n      <!-- Fourth Row -->\n      <div class=\"row\">\n\n        <div class=\"col-md-4\">\n          <label>Sub Category:</label>\n          <select class=\"custom-select form-control\">\n            <option value=\"\">-Select-</option>\n            <option value=\"\">Item 1</option>\n          </select>\n\n        </div>\n\n        <div class=\"col-md-4\">\n            <label>Price:</label>\n            <input type=\"text\" class=\"form-control\" id=\"price\" placeholder=\"\">\n          </div>\n\n      </div>\n     \n\n      <!-- Fifth Row -->\n      <div class=\"row\">\n\n        <div class=\"col-md-4\">\n          <label>Product Group:</label>\n          <select class=\"custom-select form-control\">\n            <option value=\"\">-Select-</option>\n            <option value=\"\">Item 1</option>\n          </select>\n\n        </div>\n\n        <div class=\"col-md-4\">\n            <label>Sales Tax:</label>\n            <input type=\"text\" class=\"form-control\" id=\"price\" placeholder=\"\">\n          </div>\n      </div>\n\n      \n      <!-- Sixth Row -->\n      <div class=\"row\">\n\n        <div class=\"col-md-4\">\n          <label>Brand:</label>\n          <select class=\"custom-select form-control\">\n            <option value=\"\">-Select-</option>\n            <option value=\"\">Item 1</option>\n          </select>\n\n        </div>\n\n        <div class=\"col-md-4\">\n            <label>Minimum Qty:</label>\n            <input type=\"text\" class=\"form-control\" id=\"minqty\" placeholder=\"\">\n          </div>\n\n      </div>\n\n\n      <!-- Seventh Row -->\n      <div class=\"row\">\n\n        <div class=\"col-md-4\">\n          <label>Product Gender:</label>\n          <select class=\"custom-select form-control\">\n            <option value=\"\">-Select-</option>\n            <option value=\"\">Male</option>\n            <option value=\"\">Female</option>\n            <option value=\"\">Unisex</option>\n          </select>\n        </div>\n\n        <div class=\"col-md-4\">\n            <label>Maximum Qty:</label>\n            <input type=\"text\" class=\"form-control\" id=\"minqty\" placeholder=\"\">\n          </div>\n\n      </div>\n     \n      <!-- Eigth Row -->\n      <div class=\"row\">\n  \n        <div class=\"col-md-4\">\n          <label>Purchase Type:</label>\n          <select class=\"custom-select form-control\">\n            <option value=\"\">-Select-</option>\n            <option value=\"\">Local</option>\n            <option value=\"\">Imported</option>\n            <option value=\"\">Unknown</option>\n          </select>\n        </div>\n  \n        <div class=\"col-md-4\">\n            <label>Expiry:</label>\n            <input type=\"text\" class=\"form-control\" id=\"expiry\" placeholder=\"\">\n          </div>\n  \n      </div>\n      \n     \n      <!-- Ninth Row -->\n      <div class=\"row\">\n  \n        <div class=\"col-md-4\">\n          <label>Supplier:</label>\n          <select class=\"custom-select form-control\">\n            <option value=\"\">-Select-</option>\n            <option value=\"\">ABC Trading</option>\n            <option value=\"\">Best Products</option>\n            <option value=\"\">World Items</option>\n          </select>\n        </div>\n  \n        <div class=\"col-md-4\">\n            <label>Active:</label>\n            <input type=\"text\" class=\"form-control\" id=\"active\" placeholder=\"\">\n          </div>\n  \n      </div>\n  \n  \n\n    </div>\n\n\n\n    <div class=\"col-md-4\">\n        <div class=\"row\">\n          <div class=\"col-md-4 item-list-img\">\n          <img class=\"\" src=\"../../../assets/prodimg/pepsiCanWildCherry.png\">\n          \n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col-md-4 custom-file\">\n                \n                  <input type=\"file\" class=\"custom-file-input\" id=\"inputGroupFile02\">\n                  <label class=\"custom-file-label\" for=\"inputGroupFile02\" aria-describedby=\"inputGroupFileAddon02\">Choose file</label>\n                \n                \n              \n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col-md-4\">\n            <div class=\"input-group-append\">\n                <span class=\"input-group-text bg-primary\" id=\"inputGroupFileAddon02\">Upload</span>\n              </div>\n        </div>\n      </div>\n    </div>\n \n  </div>\n\n\n\n</div>"
+module.exports = "\n<form (ngSubmit)=\"onSubmit()\">\n    <div class=\"form-group\" style=\"background-color: #eee;\">\n      <br>\n          <div class=\"row\">\n            <div class=\"col-sm-1\"></div>\n            <div class=\"col-md-4\">\n              <label for=\"title\">Item ID</label>\n              <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.itemid\" name=\"title\" aria-label=\"Title\">\n            </div>\n            <div class=\"col-md-4\">\n              <label for=\"barcode\">Barcode</label>\n              <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.barcode\" name=\"barcode\" >\n            </div>\n            <!--<div class=\"col-md-2\">\n                <ngx-barcode #barcode bc-element-type=\"svg\" bc-height=\"40\" bc-width=\"1\" [bc-value]=\"item.barcode\" class=\"rotate\">\n                </ngx-barcode>\n              </div> --> \n          </div>\n          <br>\n          <!--Row 2-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n            <div class=\"col-md-4\">\n              <label for=\"name\">Item Name</label>\n              <input type=\"text\" class=\"form-control\" placeholder=\"Name\" [(ngModel)]=\"item.name\" name=\"name\" >\n            </div>\n            <div class=\"col-md-4\">\n                <label for=\"brand\">Brand Name</label>\n                <select class=\"form-control\" placeholder=\"Brand\" [(ngModel)]=\"selectedValue\" name=\"brand\" >\n                    <option *ngFor=\"let brand of brands\" [value]=\"brand.name\">\n                      {{brand.name}}\n                    </option>\n                  </select>\n            </div>           \n          </div>\n          <br>\n          <!--Row 3-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n            <div class=\"col-md-4\">\n                <label for=\"category\">Category</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.category\" name=\"category\" >\n            </div>\n            <div class=\"col-md-4\">\n                <label for=\"unit\">Unit</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.unit\" name=\"unit\" >\n            </div>\n          </div>\n          <br>\n          <!--Row 4-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n            <div class=\"col-md-4\">\n                <label for=\"curstock\">Initial Stock</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.curstock\" name=\"curstock\" >\n            </div>\n            <div class=\"col-md-4\">\n                <label for=\"avgcost\">Item Price</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.avgcost\" name=\"avgcost\" >\n            </div>\n          </div>\n          <br>\n          <!--Row 5-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n              <div class=\"col-md-4\">\n                  <label for=\"minstklevel\">Stock Level (min.)</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.minstklevel\" name=\"minstklevel\" >\n              </div>\n              <div class=\"col-md-4\">\n                  <label for=\"discount\">Discount</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.discount\" name=\"discount\" >\n              </div>\n            </div>\n            <br>\n          <!--Row 6-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n              <div class=\"col-md-4\">\n                  <label for=\"shelfloc\">Shelf/Location</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.shelfloc\" name=\"shelfloc\" >\n              </div>\n              <div class=\"col-md-4\">\n                  <label for=\"expires\">Expires?</label>\n                  <div class=\"radio\">\n                      <label><input type=\"radio\" name=\"expires\" checked=\"\">Yes</label>\n                      &nbsp;&nbsp;\n                      <label><input type=\"radio\" name=\"expires\">No</label>\n                    </div>\n                  <!--<input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.expires\" name=\"expires\" >-->\n              </div>\n            </div>\n            <br>\n          <!--Row 7-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n              <div class=\"col-md-4\">\n                  <label for=\"invaccount\">Inventory Account</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.invaccount\" name=\"invaccount\" >\n              </div>\n              <div class=\"col-md-4\">\n                  <label for=\"incomeaccount\">Income Account</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"\" [(ngModel)]=\"item.incomeaccount\" name=\"incomeaccount\" >\n              </div>\n            </div>\n            <br>\n            <br>\n              <!--Row 8-->\n          <div class=\"row\">\n              <div class=\"col-sm-1\"></div>\n            <div class=\"col-md-3\">\n                <button type=\"submit\" class=\"btn btn-primary\" value=\"Submit\">Submit</button> &nbsp;\n                <button type=\"submit\" class=\"btn btn-secondary\" value=\"Reset\">&nbsp;Reset&nbsp; </button>\n            </div>\n            <div class=\"col-md-3\">\n            </div>\n            <div class=\"col-md-2\">\n  \n          \n          </div>\n            <!--<p> Selected value: {{selectedValue}} </p>-->\n            \n          </div>\n  \n        <br>\n      </div>\n  \n  \n    </form>\n  "
 
 /***/ }),
 
@@ -189,7 +202,7 @@ module.exports = "<div class=\"container\">\n  <div class=\"row\">\n\n    <div c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".item-list-img img {\n  overflow: hidden;\n  padding: 10px;\n  height: 100px;\n  width: 100px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9pdGVtYWRkL0M6XFxBbmdMZWFyblxcYml6YXBwL3NyY1xcYXBwXFxjb21wb25lbnRzXFxpdGVtYWRkXFxpdGVtYWRkLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWdCO0VBQ2hCLGNBQWE7RUFDYixjQUFhO0VBQ2IsYUFBWSxFQUNmIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9pdGVtYWRkL2l0ZW1hZGQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaXRlbS1saXN0LWltZyBpbWcge1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgIHBhZGRpbmc6IDEwcHg7XHJcbiAgICBoZWlnaHQ6IDEwMHB4O1xyXG4gICAgd2lkdGg6IDEwMHB4O1xyXG59Il19 */"
+module.exports = ".item-list-img img {\n  overflow: hidden;\n  padding: 10px;\n  height: 100px;\n  width: 100px; }\n\n.example-container {\n  display: flex;\n  flex-direction: column; }\n\n.example-container > * {\n  width: 100%; }\n\n.example-right-align {\n  text-align: right; }\n\ninput.example-right-align::-webkit-outer-spin-button,\ninput.example-right-align::-webkit-inner-spin-button {\n  display: none; }\n\ninput.example-right-align {\n  -moz-appearance: textfield; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9pdGVtYWRkL0M6XFxBbmdMZWFyblxcYml6YXBwL3NyY1xcYXBwXFxjb21wb25lbnRzXFxpdGVtYWRkXFxpdGVtYWRkLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWdCO0VBQ2hCLGNBQWE7RUFDYixjQUFhO0VBQ2IsYUFBWSxFQUNmOztBQUVEO0VBQ0ksY0FBYTtFQUNiLHVCQUFzQixFQUN2Qjs7QUFFRDtFQUNFLFlBQVcsRUFDWjs7QUFFRDtFQUNFLGtCQUFpQixFQUNsQjs7QUFFRDs7RUFFRSxjQUFhLEVBQ2Q7O0FBRUQ7RUFDRSwyQkFBMEIsRUFDM0IiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2l0ZW1hZGQvaXRlbWFkZC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pdGVtLWxpc3QtaW1nIGltZyB7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgcGFkZGluZzogMTBweDtcclxuICAgIGhlaWdodDogMTAwcHg7XHJcbiAgICB3aWR0aDogMTAwcHg7XHJcbn1cclxuXHJcbi5leGFtcGxlLWNvbnRhaW5lciB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICB9XHJcbiAgXHJcbiAgLmV4YW1wbGUtY29udGFpbmVyID4gKiB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbiAgLmV4YW1wbGUtcmlnaHQtYWxpZ24ge1xyXG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbiAgfVxyXG4gIFxyXG4gIGlucHV0LmV4YW1wbGUtcmlnaHQtYWxpZ246Oi13ZWJraXQtb3V0ZXItc3Bpbi1idXR0b24sXHJcbiAgaW5wdXQuZXhhbXBsZS1yaWdodC1hbGlnbjo6LXdlYmtpdC1pbm5lci1zcGluLWJ1dHRvbiB7XHJcbiAgICBkaXNwbGF5OiBub25lO1xyXG4gIH1cclxuICBcclxuICBpbnB1dC5leGFtcGxlLXJpZ2h0LWFsaWduIHtcclxuICAgIC1tb3otYXBwZWFyYW5jZTogdGV4dGZpZWxkO1xyXG4gIH1cclxuICAiXX0= */"
 
 /***/ }),
 
@@ -204,6 +217,7 @@ module.exports = ".item-list-img img {\n  overflow: hidden;\n  padding: 10px;\n 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItemaddComponent", function() { return ItemaddComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_additem_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/additem.service */ "./src/app/services/additem.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -214,10 +228,30 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var ItemaddComponent = /** @class */ (function () {
-    function ItemaddComponent() {
+    function ItemaddComponent(additemservice) {
+        this.additemservice = additemservice;
+        this.item = {
+            title: '',
+            description: '',
+            itemid: null,
+            stockval: null,
+            barcode: ''
+        };
     }
     ItemaddComponent.prototype.ngOnInit = function () {
+    };
+    ItemaddComponent.prototype.onSubmit = function () {
+        //if(this.item.itemid != '' && this.item.barcode != '') {
+        //this.item.brand = this.selectedValue ;
+        this.additemservice.addItem(this.item);
+        //this.item.title = '';
+        //this.item.description = '';
+        //this.item.itemid = null;
+        //this.item.barcode = '';
+        //this.item.stockval = null;
+        //}
     };
     ItemaddComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -225,7 +259,7 @@ var ItemaddComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./itemadd.component.html */ "./src/app/components/itemadd/itemadd.component.html"),
             styles: [__webpack_require__(/*! ./itemadd.component.scss */ "./src/app/components/itemadd/itemadd.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_services_additem_service__WEBPACK_IMPORTED_MODULE_1__["AdditemService"]])
     ], ItemaddComponent);
     return ItemaddComponent;
 }());
@@ -297,6 +331,73 @@ var NavbarpComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/additem.service.ts":
+/*!*********************************************!*\
+  !*** ./src/app/services/additem.service.ts ***!
+  \*********************************************/
+/*! exports provided: AdditemService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdditemService", function() { return AdditemService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(angularfire2_firestore__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var rxjs_rx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/rx */ "./node_modules/rxjs/rx.js");
+/* harmony import */ var rxjs_rx__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(rxjs_rx__WEBPACK_IMPORTED_MODULE_2__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AdditemService = /** @class */ (function () {
+    function AdditemService(afs) {
+        this.afs = afs;
+        //this.items = this.afs.collection('items').valueChanges();
+        this.itemsCollection = this.afs.collection('items', function (ref) { return ref.orderBy('title', 'asc'); });
+        this.items = this.itemsCollection.snapshotChanges().map(function (changes) {
+            return changes.map(function (a) {
+                var data = a.payload.doc.data();
+                data.id = a.payload.doc.id;
+                return data;
+            });
+        });
+    }
+    AdditemService.prototype.getItems = function () {
+        return this.items;
+    };
+    AdditemService.prototype.addItem = function (item) {
+        this.itemsCollection.add(item);
+    };
+    AdditemService.prototype.deleteItem = function (item) {
+        this.itemDoc = this.afs.doc("items/" + item.id);
+        this.itemDoc.delete();
+    };
+    AdditemService.prototype.updateItem = function (item) {
+        this.itemDoc = this.afs.doc("items/" + item.id);
+        this.itemDoc.update(item);
+    };
+    AdditemService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_1__["AngularFirestore"]])
+    ], AdditemService);
+    return AdditemService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/environments/environment.ts":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -307,20 +408,21 @@ var NavbarpComponent = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
-    production: false
+    production: false,
+    firebase: {
+        apiKey: "AIzaSyDSF-6wNin6cNoEvB-7qVFgXuAWo0Q3IBM",
+        authDomain: "fs1prod-a2275.firebaseapp.com",
+        databaseURL: "https://fs1prod-a2275.firebaseio.com",
+        projectId: "fs1prod-a2275",
+        storageBucket: "fs1prod-a2275.appspot.com",
+        messagingSenderId: "1063645530023"
+    }
 };
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
 
 /***/ }),
